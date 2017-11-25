@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h2 id="using-stata-with-github-for-reproducible-research">Using stata with github for reproducible research</h2>
+<p>Write in stata, and share through github as html, or markdown file This html file can be uploaded or shared with others Open a <code>.stmd</code> file first Write using stata codes Codes are separated from text by four indentations or three single quote marks ending with s (do this if you do not want to share the codes, otherwise leave it). For example, the following code calls the auto file from the system and then summarizes the variables.</p>
+<pre class='stata'>. sysuse auto, clear
+(1978 Automobile Data)
+
+. summarize
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+        make │          0
+       price │         74    6165.257    2949.496       3291      15906
+         mpg │         74     21.2973    5.785503         12         41
+       rep78 │         69    3.405797    .9899323          1          5
+    headroom │         74    2.993243    .8459948        1.5          5
+─────────────┼─────────────────────────────────────────────────────────
+       trunk │         74    13.75676    4.277404          5         23
+      weight │         74    3019.459    777.1936       1760       4840
+      length │         74    187.9324    22.26634        142        233
+        turn │         74    39.64865    4.399354         31         51
+displacement │         74    197.2973    91.83722         79        425
+─────────────┼─────────────────────────────────────────────────────────
+  gear_ratio │         74    3.014865    .4562871       2.19       3.89
+     foreign │         74    .2972973    .4601885          0          1
+        gphm │         74     5.01928    1.279856   2.439024   8.333333
+</pre>
+<p>To export, cd into the directory and from stata command window type something like <code>markstat using filename, options</code></p>
+</body>
+</html>
