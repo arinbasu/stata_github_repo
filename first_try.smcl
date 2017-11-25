@@ -1,9 +1,9 @@
 {smcl}
-{txt}{sf}{ul off}{.-}
+{com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/arindambose/Downloads/hsw/stata_project/test_git_connection/first_try.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}25 Nov 2017, 15:33:08
+ {txt}opened on:  {res}25 Nov 2017, 15:53:43
 {txt}
 {com}. //_1
 . sysuse auto, clear
@@ -29,12 +29,29 @@
 {txt}{space 5}foreign {c |}{res}         74    .2972973    .4601885          0          1
 {txt}{space 8}gphm {c |}{res}         74     5.01928    1.279856   2.439024   8.333333
 {txt}
+{com}. //_2
+. replace gphm = 100/mpg
+{txt}(0 real changes made)
+
+{com}. summarize gphm
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}gphm {c |}{res}         74     5.01928    1.279856   2.439024   8.333333
+{txt}
+{com}. //_3
+. twoway scatter gphm weight || lfit gphm weight ///
+>     , ytitle(Gallons per Mile) legend(off)
+{res}{txt}
+{com}. graph export auto.png, width(300) replace
+{txt}(file auto.png written in PNG format)
+
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/arindambose/Downloads/hsw/stata_project/test_git_connection/first_try.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}25 Nov 2017, 15:33:08
+ {txt}closed on:  {res}25 Nov 2017, 15:53:45
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

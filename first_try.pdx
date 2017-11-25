@@ -12,5 +12,9 @@
 <p>Write in stata, and share through github as html, or markdown file This html file can be uploaded or shared with others Open a <code>.stmd</code> file first Write using stata codes Codes are separated from text by four indentations or three single quote marks ending with s (do this if you do not want to share the codes, otherwise leave it). For example, the following code calls the auto file from the system and then summarizes the variables.</p>
 <p>{{1}}</p>
 <p>To export, cd into the directory and from stata command window type something like <code>markstat using filename, options</code></p>
+<p>We would convert the mpg to ghpm</p>
+<p>{{2}}</p>
+<p>{{3}}</p>
+<p>Put the figure, <img src="auto.png" alt="Fuel Efficiency" /></p>
 </body>
 </html>

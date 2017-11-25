@@ -12,3 +12,16 @@ or three single quote marks ending with s (do this if you do not want to share t
 
 
 To export, cd into the directory and from stata command window type something like `markstat using filename, options`
+
+We would convert the mpg to ghpm
+
+
+{{2}}
+
+
+
+{{3}}
+
+
+Put the figure,
+![Fuel Efficiency](auto.png)

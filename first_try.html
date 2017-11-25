@@ -71,5 +71,22 @@ displacement │         74    197.2973    91.83722         79        425
         gphm │         74     5.01928    1.279856   2.439024   8.333333
 </pre>
 <p>To export, cd into the directory and from stata command window type something like <code>markstat using filename, options</code></p>
+<p>We would convert the mpg to ghpm</p>
+<pre class='stata'>. replace gphm = 100/mpg
+(0 real changes made)
+
+. summarize gphm
+
+    Variable │        Obs        Mean    Std. Dev.       Min        Max
+─────────────┼─────────────────────────────────────────────────────────
+        gphm │         74     5.01928    1.279856   2.439024   8.333333
+</pre>
+<pre class='stata'>. twoway scatter gphm weight || lfit gphm weight ///
+>     , ytitle(Gallons per Mile) legend(off)
+
+. graph export auto.png, width(300) replace
+(file auto.png written in PNG format)
+</pre>
+<p>Put the figure, <img src="auto.png" alt="Fuel Efficiency" /></p>
 </body>
 </html>
